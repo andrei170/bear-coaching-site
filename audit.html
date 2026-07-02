@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website &amp; Growth Audit &middot; B.E.A.R. Coaching &middot; Prepared by AG1 Consulting</title>
+<meta name="description" content="Website and growth audit for B.E.A.R. Coaching, Art Fernandez, San Antonio. Prepared by AG1 Consulting.">
+<meta name="theme-color" content="#0a0908">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#121110;
+  --ink-deep:#0a0908;
+  --ink-elev:#1c1a17;
+  --gold:#e0a12e;
+  --gold-bright:#f6c257;
+  --gold-deep:#b57d1c;
+  --rust:#c0561f;
+  --steel:#8a8f98;
+  --cream:#f6f2ea;
+  --text:#f6f2ea;
+  --text-muted:#b7b1a4;
+  --text-dim:#7c7669;
+  --border:rgba(224,161,46,0.16);
+  --border-bright:rgba(246,194,87,0.42);
+  --gold-soft:rgba(224,161,46,0.08);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--ink-deep);color:var(--text);line-height:1.72;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 70% 45% at 15% 0%,rgba(224,161,46,0.07),transparent 55%),radial-gradient(ellipse 55% 45% at 90% 100%,rgba(192,86,31,0.05),transparent 55%);pointer-events:none;z-index:0}
+iconify-icon{display:inline-block;vertical-align:-0.125em}
+a{color:var(--gold-bright);text-decoration:none}
+a:hover{color:var(--gold)}
+
+/* ===== RIBBON + TOP BAR ===== */
+.demo-ribbon{background:var(--gold-soft);border-bottom:1px solid var(--border-bright);text-align:center;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-bright);padding:8px 16px;position:relative;z-index:20}
+.topbar{position:sticky;top:0;z-index:15;background:rgba(10,9,8,0.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.topbar-inner{max-width:900px;margin:0 auto;padding:12px 30px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.topbar .brand{font-family:'Archivo',sans-serif;font-weight:900;font-size:15px;letter-spacing:0.02em;color:var(--cream);text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.topbar .brand .em{color:var(--gold)}
+.topbar .links{display:flex;gap:10px;flex-wrap:wrap}
+.topbar .links a{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border);padding:8px 14px;border-radius:5px;transition:all 0.2s}
+.topbar .links a:hover{color:var(--gold-bright);border-color:var(--border-bright);background:var(--gold-soft)}
+
+/* ===== DOC WRAP ===== */
+.doc{max-width:840px;margin:0 auto;padding:0 30px 100px;position:relative;z-index:1}
+
+/* ===== COVER ===== */
+.cover{padding:74px 0 48px;border-bottom:1px solid var(--border);margin-bottom:14px}
+.cover-eyebrow{display:inline-flex;align-items:center;gap:12px;padding:9px 18px;border:1px solid var(--border-bright);border-radius:4px;background:var(--gold-soft);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:30px;font-weight:700}
+.cover h1{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(38px,6vw,66px);line-height:0.98;letter-spacing:-0.02em;color:var(--cream);text-transform:uppercase;margin-bottom:20px}
+.cover h1 em{color:var(--gold);font-style:normal}
+.cover .lede{font-size:18px;color:var(--text-muted);max-width:56ch;font-weight:300;margin-bottom:36px;line-height:1.7}
+.cover-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--border)}
+.cover-meta div{background:var(--ink);padding:18px 22px}
+.cover-meta dt{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.cover-meta dd{font-size:14px;color:var(--cream);font-weight:500}
+@media(max-width:560px){.cover-meta{grid-template-columns:1fr}}
+
+/* ===== SCORE BADGE ===== */
+.scorebox{display:flex;gap:26px;align-items:center;margin:40px 0;padding:30px 34px;border:1px solid var(--border-bright);border-radius:12px;background:linear-gradient(150deg,rgba(224,161,46,0.10),rgba(28,26,23,0.5))}
+.scorebox .score{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(46px,8vw,72px);color:var(--gold-bright);line-height:0.9;white-space:nowrap}
+.scorebox .score span{font-size:0.42em;color:var(--gold-deep)}
+.scorebox .score-txt h3{font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;color:var(--cream);text-transform:uppercase;letter-spacing:0.01em;margin-bottom:8px}
+.scorebox .score-txt p{font-size:14.5px;color:var(--text-muted);font-weight:300;line-height:1.6}
+@media(max-width:560px){.scorebox{flex-direction:column;align-items:flex-start;gap:16px;padding:26px 24px}}
+
+/* ===== TOC ===== */
+.toc{border:1px solid var(--border);border-radius:10px;padding:30px 34px;margin:40px 0;background:rgba(28,26,23,0.4)}
+.toc h4{font-family:'Archivo',sans-serif;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.toc ol{list-style:none;counter-reset:toc;display:grid;grid-template-columns:1fr 1fr;gap:11px 30px}
+@media(max-width:560px){.toc ol{grid-template-columns:1fr}}
+.toc li{counter-increment:toc;font-size:14.5px}
+.toc li a{color:var(--text-muted);display:flex;gap:12px;align-items:baseline}
+.toc li a:hover{color:var(--gold-bright)}
+.toc li a::before{content:counter(toc,decimal-leading-zero);font-family:'Archivo',sans-serif;font-weight:800;font-size:12px;color:var(--gold-deep);flex-shrink:0}
+
+/* ===== SECTIONS ===== */
+.doc section{padding:44px 0;border-top:1px solid var(--border)}
+.doc section:first-of-type{border-top:0}
+.kicker{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px;display:inline-flex;align-items:center;gap:12px}
+.kicker::before{content:'';width:26px;height:2px;background:var(--gold)}
+.doc h2{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(27px,4vw,40px);line-height:1.05;letter-spacing:-0.02em;color:var(--cream);text-transform:uppercase;margin-bottom:22px}
+.doc h2 em{color:var(--gold);font-style:normal}
+.doc h3{font-family:'Archivo',sans-serif;font-weight:700;font-size:19px;color:var(--cream);margin:30px 0 14px;letter-spacing:-0.01em}
+.doc h4.sub{font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;color:var(--gold-bright);margin:24px 0 10px;text-transform:uppercase;letter-spacing:0.04em}
+.doc p{font-size:16px;color:var(--text-muted);margin-bottom:16px;font-weight:300;line-height:1.75}
+.doc p strong,.doc li strong{color:var(--cream);font-weight:600}
+.doc ul{list-style:none;margin:0 0 18px;display:grid;gap:13px}
+.doc ul li{position:relative;padding-left:28px;font-size:15.5px;color:var(--text-muted);font-weight:300;line-height:1.7}
+.doc ul li::before{content:'';position:absolute;left:6px;top:11px;width:7px;height:7px;border-radius:2px;background:var(--gold);transform:rotate(45deg)}
+.doc ol.steps{list-style:none;counter-reset:st;display:grid;gap:14px;margin-bottom:18px}
+.doc ol.steps li{counter-increment:st;position:relative;padding-left:44px;font-size:15.5px;color:var(--text-muted);font-weight:300;line-height:1.7}
+.doc ol.steps li::before{content:counter(st);position:absolute;left:0;top:-2px;width:30px;height:30px;border-radius:7px;background:var(--gold-soft);border:1px solid var(--border-bright);color:var(--gold-bright);font-family:'Archivo',sans-serif;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+
+/* ===== CALLOUT ===== */
+.callout{display:flex;gap:16px;align-items:flex-start;padding:22px 26px;border:1px solid var(--border-bright);border-radius:8px;background:var(--gold-soft);margin:22px 0;font-size:15.5px;color:var(--cream);line-height:1.7;font-weight:300}
+.callout iconify-icon{font-size:24px;color:var(--gold-bright);flex-shrink:0;margin-top:2px}
+.callout strong{color:var(--gold-bright);font-weight:700}
+
+/* ===== TABLES ===== */
+.table-wrap{overflow-x:auto;margin:22px 0;border:1px solid var(--border);border-radius:8px}
+table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:14px 18px;font-size:14px;border-bottom:1px solid var(--border);vertical-align:top}
+thead th{background:rgba(224,161,46,0.08);font-family:'Archivo',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-bright)}
+tbody td{color:var(--text-muted);font-weight:300}
+tbody td:first-child{color:var(--cream);font-weight:500}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:rgba(224,161,46,0.03)}
+
+/* ===== FUNNEL DIAGRAM ===== */
+.funnel{border:1px solid var(--border);border-radius:8px;background:var(--ink);padding:24px 26px;margin:22px 0;overflow-x:auto}
+.funnel pre{font-family:'Inter',monospace;font-size:13px;color:var(--gold-bright);line-height:1.7;white-space:pre;font-weight:400}
+
+/* ===== FOOTER ===== */
+.doc-footer{border-top:1px solid var(--border);margin-top:20px;padding-top:34px;text-align:center}
+.doc-footer p{font-size:12.5px;color:var(--text-dim);font-style:italic;margin-bottom:6px}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:30px 0}
+.cta-primary{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;background:var(--gold);color:var(--ink-deep);border-radius:5px;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;transition:all 0.25s}
+.cta-primary:hover{background:var(--gold-bright);color:var(--ink-deep);transform:translateY(-2px)}
+.cta-ghost{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border:1px solid var(--border-bright);color:var(--cream);border-radius:5px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;transition:all 0.25s}
+.cta-ghost:hover{background:var(--gold-soft);border-color:var(--gold-bright);color:var(--cream)}
+</style>
+</head>
+<body>
+
+<div class="demo-ribbon">Concept audit prepared for B.E.A.R. Coaching &middot; not an official document</div>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><span class="em">B.E.A.R.</span> Coaching Audit</div>
+    <div class="links">
+      <a href="index.html"><iconify-icon icon="mdi:monitor-dashboard"></iconify-icon>Live demo site</a>
+      <a href="https://andrei170.github.io/ag1/" target="_blank" rel="noopener"><iconify-icon icon="mdi:home-city-outline"></iconify-icon>AG1 hub</a>
+    </div>
+  </div>
+</div>
+
+<div class="doc">
+
+  <!-- ===== COVER ===== -->
+  <header class="cover">
+    <div class="cover-eyebrow"><iconify-icon icon="mdi:file-document-outline"></iconify-icon>Website &amp; Growth Audit</div>
+    <h1>Website &amp; <em>Growth Audit</em></h1>
+    <p class="lede">A concept audit of the online presence for B.E.A.R. Coaching, and a plan to close the gap between Art Fernandez's real track record and what a stranger can find online.</p>
+    <dl class="cover-meta">
+      <div><dt>For</dt><dd>Art Fernandez, CEO, B.E.A.R. Coaching</dd></div>
+      <div><dt>Subject</dt><dd>Real estate agent coaching, training &amp; mentorship - San Antonio, TX</dd></div>
+      <div><dt>Prepared by</dt><dd>Andrei Givero, AG1 Consulting</dd></div>
+      <div><dt>Date &middot; Status</dt><dd>July 2, 2026 &middot; Concept audit, not an engagement</dd></div>
+    </dl>
+  </header>
+
+  <!-- ===== EXEC SUMMARY ===== -->
+  <section id="summary">
+    <div class="kicker">Executive Summary</div>
+    <h2>The proof every other coach fakes, <em>and a site throwing it away.</em></h2>
+    <p>Art Fernandez has the rarest asset in the coaching world: <strong>he actually did the thing he teaches.</strong> By his own account, in San Antonio real estate since 1996, with 1,800-plus home sales, 7,500-plus classes taught, and 5,000-plus agents trained. That is a track record most "real estate coaches" on Instagram invent. His claim to teach only what actually closed his own deals is not a slogan he has to defend; it is a fact he can back.</p>
+    <p>The problem is that <strong>his online presence does not carry the weight of it.</strong> We pulled the public footprint on July 2 and found the gap is wide in a way that is fixable, not fatal:</p>
+    <ol class="steps">
+      <li><strong>The website returns no crawlable content.</strong> bearcoachingworks.com renders as JavaScript with nothing behind it for search engines or AI assistants to read. To a stranger Googling him before booking, and to ChatGPT or Google's AI Overview summarizing "best real estate coach San Antonio," Art is effectively invisible.</li>
+      <li><strong>There is no visible offer, price signal, or booking path.</strong> A prospect who is ready to hire a coach has nowhere to click. That is the single biggest revenue leak.</li>
+      <li><strong>The track record is buried, not led with.</strong> The exact proof that separates Art from the hype crowd is not the first thing anyone sees. It should be the hero.</li>
+    </ol>
+    <p>This is not a "you are invisible" teardown. It is a "you earned the proof every other coach fakes, and your website is throwing it away" audit. The fixes are surgical: a crawlable authority site that leads with the operator's record, a clear offer and booking path, and a lead magnet that turns his existing audience into booked calls.</p>
+
+    <div class="scorebox">
+      <div class="score">21<span>/50</span></div>
+      <div class="score-txt">
+        <h3>Audit Score</h3>
+        <p>Strong asset, weak conversion surface. Art scores high on credibility and audience raw material, low on everything that turns a stranger into a booked call: crawlability, offer clarity, booking path, and lead capture. The ceiling on this one is high precisely because the floor is so easy to raise.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TOC ===== -->
+  <div class="toc">
+    <h4>Contents</h4>
+    <ol>
+      <li><a href="#opportunity">The Opportunity</a></li>
+      <li><a href="#current">Current-State Audit</a></li>
+      <li><a href="#positioning">The Positioning Opportunity</a></li>
+      <li><a href="#plan">The 90-Day Plan</a></li>
+      <li><a href="#spec">Website Specification</a></li>
+      <li><a href="#funnel">The Funnel</a></li>
+      <li><a href="#kpis">KPIs &amp; Reporting</a></li>
+      <li><a href="#risk">Risk Reversal</a></li>
+      <li><a href="#investment">Investment Framing</a></li>
+      <li><a href="#why-now">Why Now</a></li>
+      <li><a href="#next">Next Steps</a></li>
+    </ol>
+  </div>
+
+  <!-- ===== 1. OPPORTUNITY ===== -->
+  <section id="opportunity">
+    <div class="kicker">01 &middot; The Opportunity</div>
+    <h2>A three-million-agent market <em>desperate for what Art sells.</em></h2>
+    <p>Art is not fighting for a sliver of a small market. Real estate agent coaching sits on top of one of the largest, highest-churn professional populations in the US - a group that is structurally desperate for exactly what Art sells.</p>
+
+    <h4 class="sub">The audience Art can reach</h4>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Signal</th><th>Figure</th><th>Source note</th></tr></thead>
+        <tbody>
+          <tr><td>Licensed real estate agents in the US</td><td>~3 million</td><td>Industry estimate; the licensed pool is larger than NAR membership</td></tr>
+          <tr><td>NAR REALTOR members (2025)</td><td>~1.4 to 1.5 million</td><td>NAR reported ~1.45M members as of mid-2025</td></tr>
+          <tr><td>New agents who leave within the first year</td><td>~75% (widely cited)</td><td>Attributed to NAR; industry shorthand, not rigorously audited</td></tr>
+          <tr><td>Agents who fail within five years</td><td>~87% (widely cited)</td><td>Same caveat - directional, to confirm</td></tr>
+          <tr><td>Agents with two years or less earning under $10K/yr</td><td>~62%</td><td>NAR member trend data</td></tr>
+          <tr><td>Median income, agents with two years or less</td><td>~$8,100/yr</td><td>NAR member trend data</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Read those numbers together and the pitch writes itself. <strong>The overwhelming majority of new agents fail, most of them inside the first year, and most of them earn almost nothing while they do.</strong> That is not a marketing problem Art invented; it is the documented reality of the profession. Coaching that actually builds a pipeline is the direct answer to it - and Art has a record, dating back to 1996, of being the person who provides it.</p>
+
+    <h4 class="sub">What agents already pay for coaching</h4>
+    <p>The market has an established, public price ladder - which matters, because it means Art is not inventing a category, he is entering one buyers already fund:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Tier</th><th>Typical monthly investment</th><th>Source note</th></tr></thead>
+        <tbody>
+          <tr><td>Group / mid-tier coaching</td><td>~$200 to $750 / month</td><td>Industry range across major programs</td></tr>
+          <tr><td>High-end / 1-on-1 coaching</td><td>~$750 to ~$3,000 / month</td><td>Industry range; top programs point to a consult rather than list a price</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The category leader (Ferry International) built a business reported at $20M-plus in annual revenue on this exact model, with 200-plus certified coaches serving agents in multiple countries. <strong>The demand and the willingness to pay are proven at scale.</strong> Art does not need to create the appetite; he needs to be findable and bookable when an agent goes looking for a coach who has actually done the job.</p>
+
+    <h4 class="sub">Why the gap is the opportunity</h4>
+    <p>A 3-million-agent pool, a documented ~75% first-year washout, and a coaching market where agents already pay $200 to $3,000 a month - against that backdrop, a coach with Art's real record who is invisible in search and has no booking path is leaving money on the table every single day. Closing the gap between his credibility and his online presence is the entire play.</p>
+  </section>
+
+  <!-- ===== 2. CURRENT-STATE ===== -->
+  <section id="current">
+    <div class="kicker">02 &middot; Current-State Audit</div>
+    <h2>What is working, <em>and what is leaking.</em></h2>
+
+    <h4 class="sub">What is working (and underpowered)</h4>
+    <ul>
+      <li><strong>A real operator's story.</strong> A coach who teaches only what actually closed his own deals is a strong position - and unlike most who claim it, Art can back it with a record dating to 1996 and real sales. That is the whole brand, if it is built up front.</li>
+      <li><strong>A specific, valuable audience.</strong> Coaching real estate agents is a clear, high-value niche with buyers who pay for results and a documented failure rate that creates constant demand.</li>
+      <li><strong>Volume of content.</strong> ~540 Instagram posts is real effort. The raw material exists; it is just not converting to reach or leads.</li>
+    </ul>
+
+    <h4 class="sub">The vulnerabilities</h4>
+    <ol class="steps">
+      <li><strong>The website returns no readable content.</strong> bearcoachingworks.com renders as JavaScript with nothing crawlable behind it. To search engines, to AI assistants, and to anyone who cannot run the script, the site is effectively blank. A coach who is invisible in search loses every agent who Googles him before booking - and increasingly, every agent who asks an AI assistant "who should I hire to coach me in San Antonio."</li>
+      <li><strong>No visible offer, price, or booking path.</strong> There is no public description of what you actually buy (1-on-1, group, mentorship, course), no pricing or "apply" framing, and no obvious way to book a call. A prospect who is ready to hire a coach has nowhere to click. Single biggest revenue leak.</li>
+      <li><strong>The track record is buried, not led with.</strong> Since 1996, 1,800+ sales, 5,000+ agents trained - the exact proof that separates Art from the hype crowd - is not the first thing anyone sees. It should be the hero, the headline, and the reason to keep reading.</li>
+      <li><strong>Small reach for the effort.</strong> ~2,242 followers after ~540 posts and decades in the market signals content that is not compounding into audience. The output is there; the packaging, hooks, and conversion path are not.</li>
+      <li><strong>Generic handle and unbranded email.</strong> @real_estate_coaching is an un-ownable, un-searchable handle that collides with an entire category, and bearcoachingworks@gmail.com undercuts a premium coaching price. Small signals that add up to "amateur" for a brand whose whole pitch is professionalism.</li>
+      <li><strong>No lead capture or nurture.</strong> No lead magnet (a free agent training, a "first 90 days" plan, a scripts pack), no email capture, no follow-up. Agents researching a coach take weeks to decide. Without a nurture path, every not-ready-today visitor is gone for good.</li>
+    </ol>
+
+    <h4 class="sub">Scorecard</h4>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Element</th><th>Today</th></tr></thead>
+        <tbody>
+          <tr><td>Crawlable content for search / AI</td><td>Missing (JS-only)</td></tr>
+          <tr><td>Visible offer &amp; pricing signal</td><td>Missing</td></tr>
+          <tr><td>Clear booking / call path</td><td>Missing</td></tr>
+          <tr><td>Track record led with, above the fold</td><td>Buried</td></tr>
+          <tr><td>Lead magnet + email capture</td><td>Missing</td></tr>
+          <tr><td>Nurture / follow-up sequence</td><td>Missing</td></tr>
+          <tr><td>Branded domain email</td><td>Gmail</td></tr>
+          <tr><td>Searchable, ownable handle</td><td>Generic category handle</td></tr>
+          <tr><td>Reviews / testimonials surfaced</td><td>None public</td></tr>
+          <tr><td>Mobile-responsive</td><td>Assumed yes (to confirm)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== 3. POSITIONING ===== -->
+  <section id="positioning">
+    <div class="kicker">03 &middot; The Positioning Opportunity</div>
+    <h2>The real operator <em>in a sea of talkers.</em></h2>
+    <p>There are two kinds of real estate coach online. The first is the <strong>hype crowd</strong> - motivation, catchphrases, a rented Lamborghini, and a course. The second is the <strong>real operator</strong> - someone who actually built a production business and now trains others to do the same. The internet is flooded with the first and starved of the second.</p>
+    <p><strong>Art is unambiguously the second - and almost nothing about his current presence tells that story.</strong> That is the entire strategic opening. Every asset should hammer the one thing the hype crowd can never claim: he did the job, at volume, for decades, before he ever coached a soul. His whole edge stops being a tagline and becomes the organizing principle of the brand.</p>
+    <div class="callout">
+      <iconify-icon icon="mdi:target"></iconify-icon>
+      <span>The rebuild's job, in one line: <strong>make a stranger able to tell the difference between Art and the hype-merchants he positions against, inside five seconds of landing on the page.</strong></span>
+    </div>
+  </section>
+
+  <!-- ===== 4. 90-DAY PLAN ===== -->
+  <section id="plan">
+    <div class="kicker">04 &middot; The 90-Day Plan</div>
+    <h2>From invisible to <em>findable and bookable.</em></h2>
+
+    <h4 class="sub">Phase 1 - Crawlable authority site (Weeks 1 to 2)</h4>
+    <ul>
+      <li>Ship a fast, static, fully crawlable site that leads with the operator's record (since 1996, 1,800+ sales, 5,000+ agents) above the fold.</li>
+      <li>Deploy Person schema (Art Fernandez, coach) + Organization / LocalBusiness schema (B.E.A.R. Coaching, San Antonio) + FAQ schema so search engines and AI assistants can read the credential stack.</li>
+      <li>Title, H1, and meta rewrite around "real estate agent coach San Antonio" and the operator-who-did-the-job angle.</li>
+    </ul>
+
+    <h4 class="sub">Phase 2 - Clear offer &amp; booking path (Weeks 2 to 4)</h4>
+    <ul>
+      <li>Publish the three coaching tiers (1-on-1, group, mentorship) with plain "who it is for / what you get" framing and a single obvious booking path (strategy-call form or scheduler).</li>
+      <li>Confirm Art's real B.E.A.R. framework and swap it in for the placeholder method section.</li>
+      <li>Replace the Gmail with a branded address (info@ or art@ the domain) on all public touchpoints.</li>
+    </ul>
+
+    <h4 class="sub">Phase 3 - Lead magnet &amp; capture (Weeks 3 to 6)</h4>
+    <ul>
+      <li>Build and gate the free "Agent's 90-Day Pipeline Plan" (or "No-Guesswork Lead-Gen Checklist") with name + email capture.</li>
+      <li>Wire a simple 5-email nurture sequence that delivers the plan and moves not-ready-today agents toward a booked call.</li>
+    </ul>
+
+    <h4 class="sub">Phase 4 - Content-to-lead flywheel (Weeks 6+)</h4>
+    <ul>
+      <li>Repackage the existing ~540 posts of raw material into a repeatable, hook-first content cadence that points every piece back to the lead magnet or the call.</li>
+      <li>Turn on a review-collection ask so real agent testimonials replace the placeholders.</li>
+      <li>Monthly performance dashboard.</li>
+    </ul>
+  </section>
+
+  <!-- ===== 5. SPEC ===== -->
+  <section id="spec">
+    <div class="kicker">05 &middot; Website Specification</div>
+    <h2>Five tiers, <em>built for proof and conversion.</em></h2>
+    <p><strong>Tier 1 - Crawlable foundation.</strong> Static, fast, indexable HTML. Person + Organization / LocalBusiness + FAQ schema. Clean title / H1 / meta around the coaching category and San Antonio.</p>
+    <p><strong>Tier 2 - Proof up front.</strong> Operator credential bar (Since 1996, 1,800+ sales, 5,000+ agents trained, San Antonio) above the fold. Track-record stat band with the "figures as stated by Art, to confirm" note. Founder story section: he built it before he taught it.</p>
+    <p><strong>Tier 3 - Offer clarity.</strong> Three coaching tiers with plain outcomes. An "outcomes" section: consistent pipeline, scripts that convert, real accountability, a scalable plan. The B.E.A.R. method section (real framework confirmed with Art; placeholder clearly flagged until then).</p>
+    <p><strong>Tier 4 - Conversion architecture.</strong> One obvious booking path. FAQ accordion answering the skeptical-agent questions (another guru? how is it different? what does it cost? - answered with hint framing, not a number). Lead magnet with name + email capture and a nurture sequence behind it.</p>
+    <p><strong>Tier 5 - Brand.</strong> Bold black + amber-gold palette. Archivo display, Inter body. Confident, grounded, operator voice. Zero literal em-dashes or en-dashes anywhere.</p>
+    <div class="callout">
+      <iconify-icon icon="mdi:check-decagram-outline"></iconify-icon>
+      <span>The concept demo in the live site already implements every tier above, with the framework, photo, and testimonials clearly placeholder-flagged for Art to supply.</span>
+    </div>
+  </section>
+
+  <!-- ===== 6. FUNNEL ===== -->
+  <section id="funnel">
+    <div class="kicker">06 &middot; The Funnel</div>
+    <h2>The site is <em>the hub.</em></h2>
+    <div class="funnel">
+<pre>Content (IG / repackaged posts)
+        |
+        v
+Crawlable authority site  &lt;---- search + AI discovery
+        |
+        +--&gt; Lead magnet ("90-Day Pipeline Plan") --&gt; email capture --&gt; 5-email nurture
+        |                                                                    |
+        v                                                                    v
+Strategy-call booking  &lt;---------------------------------------------------+
+        |
+        v
+Tiered coaching (1-on-1 / group / mentorship)</pre>
+    </div>
+    <p>The site is the hub. The lead magnet catches the not-ready-today majority; the booking path catches the ready-now minority; the nurture sequence moves the first group toward the second. Nothing depends on paid ads to work - though paid amplification is an obvious Phase 2 lever once the funnel converts organically.</p>
+  </section>
+
+  <!-- ===== 7. KPIs ===== -->
+  <section id="kpis">
+    <div class="kicker">07 &middot; KPIs &amp; Reporting</div>
+    <h2>Every metric moves <em>from a standing start.</em></h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>KPI</th><th>Baseline</th><th>30-day</th><th>60-day</th><th>90-day</th></tr></thead>
+        <tbody>
+          <tr><td>Site crawlable / indexed</td><td>No</td><td>Yes</td><td>Indexed</td><td>Ranking for category terms</td></tr>
+          <tr><td>AI-assistant mention ("coach San Antonio agents")</td><td>Likely none</td><td>Emerging</td><td>Present</td><td>Named</td></tr>
+          <tr><td>Clear booking path live</td><td>No</td><td>Yes</td><td>Yes</td><td>Optimized</td></tr>
+          <tr><td>Lead-magnet opt-ins / month</td><td>0</td><td>First cohort</td><td>Growing</td><td>Compounding</td></tr>
+          <tr><td>Strategy calls booked from site</td><td>~0 (no path)</td><td>+first bookings</td><td>Growing</td><td>Consistent flow</td></tr>
+          <tr><td>Real testimonials surfaced</td><td>0</td><td>Collecting</td><td>3+</td><td>Rolling</td></tr>
+          <tr><td>Branded-domain email in use</td><td>No</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Every metric moves from a standing start, which is exactly why the early wins are dramatic.</p>
+  </section>
+
+  <!-- ===== 8. RISK REVERSAL ===== -->
+  <section id="risk">
+    <div class="kicker">08 &middot; Risk Reversal</div>
+    <h2>The honesty <em>is the guarantee.</em></h2>
+    <ul>
+      <li><strong>Foundation scope is fixed-fee, guaranteed delivery.</strong> The crawlable site, offer / booking path, and lead magnet ship on a fixed scope and price. If it does not ship as specified, it is not billed.</li>
+      <li><strong>Nothing invented.</strong> Every track-record figure is presented as Art's stated claim with a confirm note, testimonials and the B.E.A.R. framework are placeholder-flagged until Art supplies the real ones, and no income or result is promised anywhere on the build. The brand's whole edge is honesty; the marketing protects it.</li>
+      <li><strong>The demo comes first.</strong> Art sees the concept build before any commitment. The gap between his real credibility and his current site is visible on the page, not just described.</li>
+    </ul>
+  </section>
+
+  <!-- ===== 9. INVESTMENT ===== -->
+  <section id="investment">
+    <div class="kicker">09 &middot; Investment Framing</div>
+    <h2>Priced against <em>the market itself.</em></h2>
+    <p>Framing only - no specific coaching or mentorship prices are quoted, and Art's own tier pricing is his to set.</p>
+    <ul>
+      <li><strong>Foundation.</strong> Crawlable authority site + offer / booking path + one lead magnet with capture. Fixed scope, fixed fee, guaranteed delivery.</li>
+      <li><strong>Growth (recommended).</strong> Foundation + nurture sequence + content-to-lead repackaging of the existing library + monthly dashboard.</li>
+      <li><strong>Authority.</strong> Growth + ongoing content cadence, review flywheel, and paid amplification once the funnel converts organically.</li>
+    </ul>
+    <p>The reference point is the market itself: agents already pay $200 to $3,000 a month for coaching, and the category leader runs a $20M-plus business on this model. A build that makes Art findable and bookable inside that market pays for itself in a handful of closed coaching engagements.</p>
+  </section>
+
+  <!-- ===== 10. WHY NOW ===== -->
+  <section id="why-now">
+    <div class="kicker">10 &middot; Why Now</div>
+    <h2>The window is <em>closing on the shortlist.</em></h2>
+    <ol class="steps">
+      <li><strong>AI search is compressing the shortlist.</strong> Agents increasingly ask ChatGPT, Perplexity, or Google's AI Overview "who should I hire to coach me." A JS-only site with no crawlable content is invisible to exactly the tool doing the recommending. The coaches who become the named answer in 2026 set the default for years.</li>
+      <li><strong>The failure-rate demand is constant and large.</strong> With ~75% of new agents washing out in year one, there is a fresh cohort of desperate-for-a-system agents every quarter. The audience is not seasonal; the only thing missing is a findable, bookable Art.</li>
+      <li><strong>Art's proof is a depreciating asset if it stays hidden.</strong> Every month the site fails to tell the operator story, a hype-merchant with a better funnel takes a booking Art should have had. The record is done growing dramatically; the presentation of it is the only variable left.</li>
+    </ol>
+  </section>
+
+  <!-- ===== 11. NEXT STEPS ===== -->
+  <section id="next">
+    <div class="kicker">11 &middot; Next Steps</div>
+    <h2>Three moves <em>to go live.</em></h2>
+    <ol class="steps">
+      <li><strong>15-minute review of the concept demo</strong> - walk Art through the operator-first build on the live demo site.</li>
+      <li><strong>Confirm the load-bearing facts:</strong> the real B.E.A.R. framework and what each letter stands for, the track-record figures for sourcing, real testimonials, and the offer / tier structure.</li>
+      <li><strong>Scope Foundation or Growth</strong> and set the go-live.</li>
+    </ol>
+    <div class="cta-row">
+      <a class="cta-primary" href="index.html"><iconify-icon icon="mdi:monitor-dashboard"></iconify-icon>View the live demo site</a>
+      <a class="cta-ghost" href="mailto:info@andreicopy.net"><iconify-icon icon="mdi:email-outline"></iconify-icon>info@andreicopy.net</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="doc-footer">
+    <p>Confidential. Concept audit prepared for Art Fernandez, B.E.A.R. Coaching, July 2026.</p>
+    <p>AG1 Consulting &middot; Andrei Givero &middot; <a href="https://andrei170.github.io/ag1/" target="_blank" rel="noopener">andrei170.github.io/ag1</a></p>
+  </div>
+
+</div>
+</body>
+</html>
